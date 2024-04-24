@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to2.example.presenter.WeatherPanel" >
+    <left>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <Text text="Please choose places you want to see weather from!" textAlignment="CENTER"/>
+            <VBox spacing="5" alignment="CENTER" fx:id="placeBox">
+
+            </VBox>
+            <VBox spacing="10" alignment="CENTER">
+                <HBox spacing="5" alignment="CENTER">
+                    <Text text="Latitude"/>
+                    <TextField fx:id="userLatitude" text="50.04"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER">
+                    <Text text="Longitude"/>
+                    <TextField fx:id="userLongitude" text="19.94"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER">
+                    <Text text="You can also locate yourself!"/>
+                    <Button fx:id="locationButton" mnemonicParsing="false" onAction="#handleLocateUser" text="o"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER">
+                    <Text text="Choose from Favorites!" />
+                    <ChoiceBox fx:id="favoritesBox" prefWidth="150" onAction="#handleSelectedFav" >
+                    </ChoiceBox>
+                    <Button fx:id="deleteFavoriteButton" text="Delete" onAction="#handleDeleteFavorite"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER">
+                    <Text text="Select Time:"/>
+                    <Spinner fx:id="hourSpinner" min="0" max="23" maxWidth="70">
+                        <valueFactory>
+                            <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="23" initialValue="0"/>
+                        </valueFactory>
+                    </Spinner>
+                    <Label text=":" />
+                    <Spinner fx:id="minuteSpinner" min="0" max="59" maxWidth="70">
+                        <valueFactory>
+                            <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="59" initialValue="0"/>
+                        </valueFactory>
+                    </Spinner>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER">
+                    <Label text="Tomorrow?" />
+                    <CheckBox fx:id="tomorrowBox" />
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER">
+                    <Text text="Favorite Place Name:" />
+                    <TextField fx:id="favoritePlaceName" />
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER" style="-fx-padding: 15;">
+                    <Button fx:id="addWeather" mnemonicParsing="false" onAction="#handleAddWeather" text="Add to weather"/>
+                    <Button fx:id="addToFavorite" mnemonicParsing="false" onAction="#handleAddToFavorite" text="Add to favorites"/>
+                </HBox>
+
+                <Button fx:id="showWeatherButtonCoords" mnemonicParsing="false" onAction="#handleShowWeatherAction" text="Show the Weather"/>
+                <Button fx:id="clearWeather" mnemonicParsing="false" onAction="#handleClearWeather" text="Clear"/>
+            </VBox>
+        </VBox>
+    </left>
+    <center>
+        <VBox style="-fx-padding: 20;">
+        <GridPane hgap="40" vgap="30" alignment="CENTER">
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER" spacing="5">
+                <Text fx:id="tempFeature"/>
+                <ImageView fx:id="tempIcon" fitHeight="150" fitWidth="150">
+                    <Image url="@/icons/placeholder.png"/>
+                </ImageView>
+            </VBox>
+
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" alignment="CENTER" spacing="5">
+                <Text fx:id="cloudFeature"/>
+                <ImageView fx:id="cloudIcon" fitHeight="150" fitWidth="150">
+                    <Image url="@/icons/placeholder.png"/>
+                </ImageView>
+            </VBox>
+
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER" spacing="5">
+                <Text fx:id="umbrellaFeature"/>
+                <ImageView fx:id="umbrellaIcon" fitHeight="150" fitWidth="150">
+                    <Image url="@/icons/placeholder.png"/>
+                </ImageView>
+            </VBox>
+
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER" spacing="5">
+                <Text fx:id="maskFeature"/>
+                <ImageView fx:id="maskIcon" fitHeight="150" fitWidth="150">
+                    <Image url="@/icons/placeholder.png"/>
+                </ImageView>
+            </VBox>
+        </GridPane>
+        </VBox>
+    </center>
+</BorderPane>

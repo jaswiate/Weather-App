@@ -1,0 +1,39 @@
+{
+    "current": {
+        "cloud": 50,
+        "wind_kph": 15.1,
+        "feelslike_c": -7.4,
+        "last_updated": "2023-11-27 10:00",
+        "condition": {},
+        "is_day": 1,
+        "humidity": 86,
+        "air_quality": {
+            "no2": 11.7,
+            "o3": 45.4,
+            "us-epa-index": 1,
+            "so2": 14.9,
+            "pm2_5": 6.3,
+            "pm10": 9.7,
+            "co": 307.1,
+            "gb-defra-index": 1
+        },
+        "wind_dir": "W",
+        "temp_c": -2,
+        "pressure_mb": 1008,
+        "precip_mm": 0.01
+    },
+    "location": {
+        "localtime": "2023-11-27 10:11",
+        "country": "Poland",
+        "localtime_epoch": 1701076292,
+        "name": "Cracow",
+        "lon": 19.94,
+        "region": "",
+        "lat": 50.04,
+        "tz_id": "Europe/Warsaw"
+    },
+    "forecast": {
+        "forecastday": []
+    }
+
+}
